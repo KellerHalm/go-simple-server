@@ -15,6 +15,11 @@ func main() {
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
         fmt.Fprintf(w, "Hello, World! Server Version: %s", version)
     })
+
+	http.HandleFunc("/debug", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "Debug info: Experimental mode")
+	})
+	
     http.HandleFunc("/health", healthHandler) 
     
     fmt.Printf("Starting server v%s on port :8080\n", version)
