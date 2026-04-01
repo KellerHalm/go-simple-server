@@ -13,7 +13,7 @@ func healthHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
     const version = "1.1.0" 
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello! Server Version: %s", version)
+        fmt.Fprintf(w, "Hello, World! Server Version: %s", version)
     })
     http.HandleFunc("/health", healthHandler) 
     
